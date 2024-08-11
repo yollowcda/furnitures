@@ -39,14 +39,14 @@ class FurnituresController extends Controller
      */
     public function addFurniture(Request $request): int
     {
-        // $validated = $request->validate([
-        //     'title' => 'required|string|max:255',
-        //     'price' => 'required|numeric',
-        //     'description' => 'nullable|string',
-        //     'category' => 'required|integer|exists:categorie,idcategorie',
-        // ]);
+         $validated = $request->validate([
+             'title' => 'required|string|max:255',
+             'price' => 'required|numeric',
+             'description' => 'nullable|string',
+             'category' => 'required|integer|exists:categorie,idcategorie',
+         ]);
 
-        // $furniture = Furniture::create($validated);
+         $furniture = Furniture::create($validated);
 
         return 1; //response()->json($furniture, 201);
     }
